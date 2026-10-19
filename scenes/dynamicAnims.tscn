@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://cead12w5bjbix"]
+
+[ext_resource type="Script" uid="uid://tmoc18b4y28r" path="res://scripts/snake.gd" id="1_4lfpr"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tye4b"]
+radius = 57.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i5s70"]
+radius = 61.13101
+
+[node name="Node2D" type="Node2D" unique_id=1152461910]
+
+[node name="Snake" type="CharacterBody2D" parent="." unique_id=1036043235]
+script = ExtResource("1_4lfpr")
+bodySegmentCount = 54
+headRadius = 117
+segmentSizeDegradationPercent = 0.076
+
+[node name="head" type="CollisionShape2D" parent="Snake" unique_id=2037631833]
+z_index = -1
+position = Vector2(582, 215)
+shape = SubResource("CircleShape2D_tye4b")
+debug_color = Color(0.60046774, 0.36958456, 1, 0.41960785)
+
+[node name="Area2D" type="Area2D" parent="Snake/head" unique_id=6315878]
+collision_layer = 2
+collision_mask = 2
+collision_priority = 2.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Snake/head/Area2D" unique_id=1298753714]
+shape = SubResource("CircleShape2D_i5s70")
+debug_color = Color(1.92523e-07, 0.64858925, 0.18588662, 0.41960785)
+
+[connection signal="input_event" from="Snake/head/Area2D" to="Snake" method="_on_area_2d_input_event"]
