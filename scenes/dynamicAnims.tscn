@@ -12,8 +12,10 @@ radius = 61.13101
 
 [node name="Snake" type="CharacterBody2D" parent="." unique_id=1036043235]
 script = ExtResource("1_4lfpr")
-bodySegmentCount = 54
+bodySegmentCount = 3
 headRadius = 117
+movementSpeed = 10
+offsetFixingPosition = 0.005
 segmentSizeDegradationPercent = 0.076
 
 [node name="head" type="CollisionShape2D" parent="Snake" unique_id=2037631833]
@@ -30,5 +32,7 @@ collision_priority = 2.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Snake/head/Area2D" unique_id=1298753714]
 shape = SubResource("CircleShape2D_i5s70")
 debug_color = Color(1.92523e-07, 0.64858925, 0.18588662, 0.41960785)
+
+[node name="Camera2D" type="Camera2D" parent="Snake/head" unique_id=1502155382]
 
 [connection signal="input_event" from="Snake/head/Area2D" to="Snake" method="_on_area_2d_input_event"]
