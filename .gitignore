@@ -1,6 +1,6 @@
 # Personal ignores
 godot-git-plugin*
-
+.vs
 # Godot 4.2+ specific ignores
 ~*.dll
 
