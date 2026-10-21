@@ -1,0 +1,120 @@
+[gd_scene format=3 uid="uid://d0twiudmjuraj"]
+
+[ext_resource type="Script" uid="uid://dqqdlghjwlca3" path="res://scripts/chain_control_menu.gd" id="1_x335m"]
+
+[node name="Control" type="Control" unique_id=452365695]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_x335m")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=270395296]
+
+[node name="Panel" type="PanelContainer" parent="CanvasLayer" unique_id=164487371]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -237.0
+offset_top = -162.5
+offset_bottom = 162.5
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
+offset_transform_enabled = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Panel" unique_id=1276845133]
+layout_mode = 2
+
+[node name="CheckButton" type="CheckButton" parent="CanvasLayer/Panel/HBoxContainer" unique_id=1015572882]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Panel/HBoxContainer" unique_id=82283512]
+layout_mode = 2
+
+[node name="Segment Parameters" type="Label" parent="CanvasLayer/Panel/HBoxContainer/VBoxContainer" unique_id=2080873501]
+layout_mode = 2
+text = "Segment Parameters"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Panel/HBoxContainer/VBoxContainer" unique_id=1562065227]
+layout_mode = 2
+
+[node name="segmentCountLabel" type="Label" parent="CanvasLayer/Panel/HBoxContainer/VBoxContainer/VBoxContainer" unique_id=552624528]
+layout_mode = 2
+text = "segmentCount: int ()"
+
+[node name="segmentCountSlider" type="HSlider" parent="CanvasLayer/Panel/HBoxContainer/VBoxContainer/VBoxContainer" unique_id=1567663611]
+layout_mode = 2
+min_value = 3.0
+max_value = 15.0
+value = 3.0
+allow_greater = true
+ticks_on_borders = true
+
+[node name="radiusDegradationLabel" type="Label" parent="CanvasLayer/Panel/HBoxContainer/VBoxContainer/VBoxContainer" unique_id=1117684441]
+layout_mode = 2
+text = "radiusDegradation: float"
+
+[node name="radiusDegradationSlider" type="HSlider" parent="CanvasLayer/Panel/HBoxContainer/VBoxContainer/VBoxContainer" unique_id=569707663]
+layout_mode = 2
+max_value = 0.9
+step = 0.01
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer/Panel/HBoxContainer/VBoxContainer" unique_id=1420044868]
+layout_mode = 2
+
+[node name="widthLabel" type="Label" parent="CanvasLayer/Panel/HBoxContainer/VBoxContainer/VBoxContainer2" unique_id=894642640]
+layout_mode = 2
+text = "width: float"
+
+[node name="widthSlider" type="HSlider" parent="CanvasLayer/Panel/HBoxContainer/VBoxContainer/VBoxContainer2" unique_id=1520366702]
+layout_mode = 2
+min_value = 1.0
+max_value = 10.0
+step = 0.1
+value = 1.0
+allow_greater = true
+
+[node name="radiusLabel" type="Label" parent="CanvasLayer/Panel/HBoxContainer/VBoxContainer/VBoxContainer2" unique_id=2057093367]
+layout_mode = 2
+text = "radius: float"
+
+[node name="radiusSlider" type="HSlider" parent="CanvasLayer/Panel/HBoxContainer/VBoxContainer/VBoxContainer2" unique_id=1668459578]
+layout_mode = 2
+min_value = 3.0
+max_value = 30.0
+step = 0.1
+value = 3.0
+allow_greater = true
+
+[node name="pathRadiusLabel" type="Label" parent="CanvasLayer/Panel/HBoxContainer/VBoxContainer/VBoxContainer2" unique_id=843738217]
+layout_mode = 2
+text = "pathRadius: float"
+
+[node name="pathRadiusSlider" type="HSlider" parent="CanvasLayer/Panel/HBoxContainer/VBoxContainer/VBoxContainer2" unique_id=1404109661]
+layout_mode = 2
+min_value = 10.0
+max_value = 500.0
+step = 0.1
+value = 10.0
+allow_greater = true
+
+[node name="distanceLabel" type="Label" parent="CanvasLayer/Panel/HBoxContainer/VBoxContainer/VBoxContainer2" unique_id=211005872]
+layout_mode = 2
+text = "distance: float"
+
+[node name="distanceSlider" type="HSlider" parent="CanvasLayer/Panel/HBoxContainer/VBoxContainer/VBoxContainer2" unique_id=265643256]
+layout_mode = 2
+
+[connection signal="toggled" from="CanvasLayer/Panel/HBoxContainer/CheckButton" to="." method="_on_check_button_toggled"]
+[connection signal="value_changed" from="CanvasLayer/Panel/HBoxContainer/VBoxContainer/VBoxContainer/segmentCountSlider" to="." method="on_any_slider_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/Panel/HBoxContainer/VBoxContainer/VBoxContainer/radiusDegradationSlider" to="." method="on_any_slider_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/Panel/HBoxContainer/VBoxContainer/VBoxContainer2/widthSlider" to="." method="on_any_slider_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/Panel/HBoxContainer/VBoxContainer/VBoxContainer2/radiusSlider" to="." method="on_any_slider_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/Panel/HBoxContainer/VBoxContainer/VBoxContainer2/pathRadiusSlider" to="." method="on_any_slider_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/Panel/HBoxContainer/VBoxContainer/VBoxContainer2/distanceSlider" to="." method="on_any_slider_value_changed"]

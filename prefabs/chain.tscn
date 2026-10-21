@@ -4,4 +4,4 @@
 
 [node name="Node2D" type="Node2D" unique_id=998508977]
 script = ExtResource("1_t1iqs")
-segmentCount = 12
+segmentCount = 15

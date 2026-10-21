@@ -33,6 +33,6 @@ collision_priority = 2.0
 shape = SubResource("CircleShape2D_i5s70")
 debug_color = Color(1.92523e-07, 0.64858925, 0.18588662, 0.41960785)
 
-[node name="Camera2D" type="Camera2D" parent="Snake/head" unique_id=1502155382]
+[node name="mainCamera" type="Camera2D" parent="Snake/head" unique_id=1502155382]
 
 [connection signal="input_event" from="Snake/head/Area2D" to="Snake" method="_on_area_2d_input_event"]

@@ -15,6 +15,10 @@ run/main_scene="uid://cafo11jblajgm"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://assets/icon.svg"
 
+[autoload]
+
+SceneControl="*uid://doexnx0ht2kks"
+
 [display]
 
 window/stretch/mode="canvas_items"
@@ -28,6 +32,10 @@ project/assembly_name="Новый игровой проект"
 
 version_control/plugin_name="GitPlugin"
 version_control/autoload_on_startup=true
+
+[global_group]
+
+mainCamera=""
 
 [input]
 

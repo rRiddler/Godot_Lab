@@ -1,7 +1,10 @@
 extends Node2D
-@export var mainCamera: Camera2D
+var mainCamera: Camera2D
 
-func _input(event: InputEvent) -> void:
+func _ready() -> void:
+	mainCamera = get_tree().get_first_node_in_group('mainCamera')
+
+func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if event.is_pressed():
 			if event.button_index == MOUSE_BUTTON_WHEEL_DOWN and mainCamera.zoom.length() > 0.5:
